@@ -25,7 +25,7 @@
 .reveal .slides{ text-align:left; }
 .reveal .slides section{
   width:1280px; height:720px; padding:0; margin:0; box-sizing:border-box;
-  display:flex; overflow:hidden;
+  display:flex !important; overflow:hidden;
 }
 .reveal ::selection{ background:var(--rust); color:#fff; }
 .reveal h1,.reveal h2,.reveal h3,.reveal p,.reveal ul,.reveal ol{ margin:0; padding:0; }
@@ -37,8 +37,8 @@
 .reveal .slide-number{ background:transparent; color:var(--ink-soft); font-family:'Poppins'; font-size:14px; right:16px; bottom:12px; }
 
 /* ---------- Blocos utilitários ---------- */
-.wrap{ margin:auto; width:100%; padding:66px 92px; box-sizing:border-box; }
-.wrap.center{ text-align:center; max-width:1000px; }
+.wrap{ margin:0; width:100%; padding:104px 100px 100px; box-sizing:border-box; align-self:flex-start; }
+.wrap.center{ text-align:center; max-width:1060px; margin:0 auto; align-self:center; }
 .wrap.pad-lg{ padding:72px 100px; }
 
 .kicker{
@@ -71,9 +71,9 @@
 .s-cover{ background:var(--paper); position:relative; }
 .cover-motif{ position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none; }
 .cover-inner{ position:relative; z-index:2; margin:auto 0; padding:0 0 0 100px; max-width:820px; }
-.cover-logos{ display:flex; align-items:center; gap:40px; margin-bottom:52px; }
-.cover-logos .selo{ height:110px; width:auto; }
-.cover-logos .sinapsy{ height:82px; width:auto; }
+.cover-logos{ display:flex; align-items:center; gap:44px; margin-bottom:54px; }
+.cover-logos .selo{ height:148px; width:auto; }
+.cover-logos .sinapsy{ height:118px; width:auto; }
 .cover-title{
   font-family:'Fraunces',serif; font-weight:600; font-size:82px; line-height:1.02;
   letter-spacing:-1px; color:#2A2618;
@@ -85,16 +85,21 @@
 /* =========================================================
    Divisórias de seção
    ========================================================= */
-.s-divider{ background:var(--olive-deep); position:relative; color:#F4EEE1; }
-.s-divider .divider{ position:relative; z-index:2; margin:auto 0; padding-left:100px; max-width:900px; }
-.divider-kicker{ font-weight:600; font-size:15px; letter-spacing:.26em; text-transform:uppercase; color:#E5B48A; margin-bottom:22px; }
-.divider-title{ font-family:'Fraunces',serif; font-weight:600; font-size:66px; line-height:1.04; color:#F6F0E3; letter-spacing:-.5px; }
-.divider-rule{ width:90px; height:4px; background:var(--rust); border-radius:3px; margin:30px 0; }
-.divider-sub{ font-family:'Fraunces',serif; font-style:italic; font-size:27px; color:#DCCFAE; max-width:640px; line-height:1.4; }
+.s-divider{ background:var(--olive-deep); position:relative; color:#F4EEE1; padding:0 0 0 14px; box-sizing:border-box; }
+.s-divider .divider{ position:relative; z-index:2; margin:auto 0; padding:0 110px; max-width:920px; }
+.divider-kicker{ font-weight:600; font-size:16px; letter-spacing:.3em; text-transform:uppercase; color:#E5B48A; margin-bottom:26px; }
+.divider-title{ font-family:'Fraunces',serif; font-weight:600; font-size:74px; line-height:1.06; color:#F6F0E3; letter-spacing:-.5px; }
+.divider-rule{ width:96px; height:4px; background:var(--rust); border-radius:3px; margin:36px 0; }
+.divider-sub{ font-family:'Fraunces',serif; font-style:italic; font-size:29px; color:#DCCFAE; max-width:660px; line-height:1.45; }
 .divider-num{
-  position:absolute; right:70px; bottom:-40px; font-family:'Fraunces',serif; font-weight:600;
-  font-size:340px; line-height:1; color:rgba(196,105,58,.16); z-index:1; user-select:none;
+  position:absolute; right:96px; top:50%; transform:translateY(-50%); font-family:'Fraunces',serif; font-weight:600;
+  font-size:300px; line-height:1; color:rgba(196,105,58,.18); z-index:1; user-select:none;
 }
+.divider-foot{
+  position:absolute; left:110px; right:96px; bottom:56px; z-index:2; display:flex; align-items:center;
+  justify-content:space-between; gap:20px; padding-top:22px; border-top:1px solid rgba(244,238,225,.18);
+}
+.divider-foot span{ font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:#C9BE9D; font-weight:500; }
 .s-divider::after{
   content:""; position:absolute; left:0; top:0; bottom:0; width:14px; background:var(--rust);
 }
@@ -139,9 +144,13 @@
 }
 .card::before{ content:""; position:absolute; left:0; top:0; width:100%; height:5px; background:var(--rust); }
 .card .card-n{ font-family:'Fraunces',serif; font-size:30px; font-weight:600; color:var(--rust); display:block; margin-bottom:10px; }
-.card h3{ font-family:'Fraunces',serif; font-weight:600; font-size:25px; color:var(--ink); margin-bottom:10px; line-height:1.15; }
+.card h3{ font-family:'Fraunces',serif; font-weight:600; font-size:25px; color:var(--ink); margin-bottom:10px; line-height:1.2; overflow-wrap:break-word; hyphens:auto; }
 .card p{ font-size:19px; line-height:1.5; color:var(--ink-soft); }
 .card .card-tag{ font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); font-weight:600; }
+
+.cards.c4 .card{ padding:26px 20px 28px; }
+.cards.c4 .card h3{ font-size:18.5px; letter-spacing:-.2px; }
+.cards.c4 .card p{ font-size:16px; }
 
 /* Cartões alternando olive/rust nos toppers */
 .cards.accent .card:nth-child(4n+2)::before{ background:var(--olive); }
@@ -276,9 +285,9 @@
 .fim-contatos .ci{ text-align:center; }
 .fim-contatos .ci .ci-lbl{ font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:#E5B48A; font-weight:600; display:block; margin-bottom:8px; }
 .fim-contatos .ci .ci-val{ font-family:'Fraunces',serif; font-size:26px; color:#F6F0E3; }
-.fim-logos{ display:flex; justify-content:center; align-items:center; gap:40px; margin-top:44px; }
-.fim-logos .selo{ height:92px; }
-.fim-logos .sinapsy{ height:66px; filter:brightness(0) invert(1); opacity:.9; }
+.fim-logos{ display:flex; justify-content:center; align-items:center; gap:44px; margin-top:46px; }
+.fim-logos .selo{ height:116px; }
+.fim-logos .sinapsy{ height:92px; filter:brightness(0) invert(1); opacity:.92; }
 .s-fim::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:14px;
   background:linear-gradient(90deg,var(--rust) 0 33%,var(--olive) 33% 66%,var(--gold) 66% 100%); }
 
