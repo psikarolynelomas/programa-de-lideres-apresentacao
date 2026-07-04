@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programa de Desenvolvimento de Líderes — Sinapsy</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- 1 · CAPA -->
+      <section class="s-cover">
+        <svg class="cover-motif" viewBox="0 0 1280 720" aria-hidden="true">
+          <path d="M1085,60 C1150,220 1050,340 1150,470 C1220,560 1130,640 1190,770" fill="none" stroke="#BD8427" stroke-width="2.5" opacity=".6"/>
+          <path d="M1165,40 C1095,210 1225,360 1120,520 C1075,590 1170,665 1120,770" fill="none" stroke="#C4693A" stroke-width="1.6" opacity=".4"/>
+          <ellipse cx="1168" cy="150" rx="94" ry="132" transform="rotate(27 1168 150)" fill="#C4693A"/>
+          <ellipse cx="1120" cy="368" rx="82" ry="122" transform="rotate(-16 1120 368)" fill="#5C6B3A"/>
+          <ellipse cx="1188" cy="578" rx="88" ry="124" transform="rotate(22 1188 578)" fill="#BD8427"/>
+          <ellipse cx="1260" cy="292" rx="58" ry="94" transform="rotate(12 1260 292)" fill="#A9532B" opacity=".92"/>
+        </svg>
+        <div class="cover-inner">
+          <div class="cover-logos">
+            <img class="selo" src="logos/selo-pdl.png" alt="Programa de Desenvolvimento de Líderes">
+            <img class="sinapsy" src="logos/sinapsy.png" alt="Sinapsy">
+          </div>
+          <p class="kicker">Sinapsy · Linking People and Solutions</p>
+          <h1 class="cover-title">Programa de<br>Desenvolvimento<br>de Líderes</h1>
+          <div class="cover-rule"></div>
+          <p class="cover-present">Conduzido por <strong>Karolyne Lomas</strong> &amp; <strong>Letícia Gomes</strong></p>
+        </div>
+      </section>
+
+      <!-- 2 · BOAS-VINDAS -->
+      <section>
+        <div class="wrap center">
+          <p class="kicker">Boas-vindas</p>
+          <h2 class="title lg">Seja muito bem-vindo(a)</h2>
+          <div class="rule"></div>
+          <p class="lead" style="margin:0 auto;">É um grande prazer recebê-lo(a) em nosso treinamento! Estamos felizes em caminhar ao seu lado nesta jornada de desenvolvimento e troca de experiências. Que este espaço seja um catalisador para o seu crescimento, potencializando sua capacidade de inspirar pessoas, conduzir equipes e gerar resultados.</p>
+          <p class="tagline-serif">Liderar é inspirar o futuro. Excelente treinamento!</p>
+        </div>
+      </section>
+
+      <!-- 3 · ACORDOS -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">Combinados do grupo</p>
+          <h2 class="title">Nossos acordos de sucesso</h2>
+          <div class="rule"></div>
+          <ol class="list-num">
+            <li><span class="n">01</span><span class="t"><strong>Sigilo</strong></span></li>
+            <li><span class="n">02</span><span class="t"><strong>Vulnerabilidade legítima</strong></span></li>
+            <li><span class="n">03</span><span class="t"><strong>Escuta sem julgamento</strong></span></li>
+            <li><span class="n">04</span><span class="t"><strong>Parceria no desenvolvimento</strong></span></li>
+            <li><span class="n">05</span><span class="t"><strong>Presença plena</strong></span></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 4 · LETÍCIA -->
+      <section class="s-bio">
+        <div class="bio">
+          <div class="bio-info">
+            <p class="kicker">Facilitadora</p>
+            <h2 class="title">Letícia Gomes</h2>
+            <p class="bio-role">Gestora de Gente &amp; Gestão · Grupo Alemã</p>
+            <div class="rule"></div>
+            <p class="bio-text">Letícia é Gestora de Gente e Gestão do Grupo Alemã, reconhecido pelo GPTW como a 12ª Melhor Empresa para Trabalhar no Varejo — nível Brasil, reflexo de uma gestão consistente e orientada a pessoas.</p>
+            <p class="bio-text">Coautora do livro <em>De, Para, Com Pessoas</em> e vencedora da categoria Prata do PSH — Sustentabilidade Social. Analista Comportamental pela Thomas International Brasil, possui MBA em Gestão de Empresas e Inovação, MBA em Administração com ênfase em Gestão de Pessoas e cursa MBA em Psicologia Organizacional. É bacharel em Turismo.</p>
+          </div>
+          <div class="bio-facets">
+            <figure class="facet"><img src="midias-leticia/gestora-gente-gestao.jpg" alt=""><figcaption>Gestora de Gente &amp; Gestão</figcaption></figure>
+            <figure class="facet"><img src="midias-leticia/palestrante.jpg" alt=""><figcaption>Palestrante</figcaption></figure>
+            <figure class="facet"><img src="midias-leticia/crista.jpg" alt=""><figcaption>Cristã</figcaption></figure>
+            <figure class="facet"><img src="midias-leticia/mae-e-esposa.jpg" alt=""><figcaption>Mãe e esposa</figcaption></figure>
+            <figure class="facet"><img src="midias-leticia/menina.jpg" alt=""><figcaption>Menina</figcaption></figure>
+            <figure class="facet"><img src="midias-leticia/malu.jpg" alt=""><figcaption>Malu</figcaption></figure>
+            <figure class="facet"><img src="midias-leticia/luna.jpg" alt=""><figcaption>Luna</figcaption></figure>
+            <figure class="facet"><img src="midias-leticia/caprichosa.jpg" alt=""><figcaption>Caprichosa</figcaption></figure>
+            <figure class="facet"><img src="midias-leticia/pesca-esportiva.jpg" alt=""><figcaption>Pesca esportiva</figcaption></figure>
+            <figure class="facet"><img src="midias-leticia/botafoguense-crianca.jpg" alt=""><figcaption>Desde sempre</figcaption></figure>
+            <figure class="facet"><img src="midias-leticia/botafoguense-adulto.jpg" alt=""><figcaption>Botafoguense</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 · KAROLYNE -->
+      <section class="s-bio">
+        <div class="bio">
+          <div class="bio-info">
+            <p class="kicker">Facilitadora</p>
+            <h2 class="title">Karolyne Lomas</h2>
+            <p class="bio-role">Psicóloga · Consultora na Sinapsy Consultoria</p>
+            <div class="rule"></div>
+            <p class="bio-text">Karolyne é Psicóloga e Consultora associada na Sinapsy Consultoria. Atua há dois anos na Psicologia Organizacional, com experiência em Avaliação psicológica, R&amp;S, T&amp;D, Supervisão de estágios em psicologia e Orientação Profissional e de Carreira.</p>
+            <p class="bio-text">Tem formação em Gestão de Recursos Humanos e é pós-graduanda em Avaliação Psicológica e Neuropsicologia.</p>
+          </div>
+          <div class="bio-facets cols3">
+            <figure class="facet"><img src="midias-karol/palestrante.jpg" alt=""><figcaption>Palestrante</figcaption></figure>
+            <figure class="facet"><img src="midias-karol/supervisora-grupo.jpg" alt=""><figcaption>Supervisora de estágio</figcaption></figure>
+            <figure class="facet"><img src="midias-karol/orientadora-carreira.jpg" alt=""><figcaption>Orientadora de carreira</figcaption></figure>
+            <figure class="facet"><img src="midias-karol/noiva.jpg" alt=""><figcaption>Noiva</figcaption></figure>
+            <figure class="facet"><img src="midias-karol/ursa-morgana.jpg" alt=""><figcaption>Ursa Maria &amp; Morgana Riven</figcaption></figure>
+            <figure class="facet"><img src="midias-karol/praias-cachoeira.jpg" alt=""><figcaption>Praias, rios e cachoeiras</figcaption></figure>
+            <figure class="facet"><img src="midias-karol/jogos-uno.jpg" alt=""><figcaption>Jogos de tabuleiro</figcaption></figure>
+            <figure class="facet"><img src="midias-karol/jogos-monopoly.jpg" alt=""><figcaption>Jogos e estratégias</figcaption></figure>
+            <figure class="facet"><img src="midias-karol/praias-placa.jpg" alt=""><figcaption>Cachoeira da Neblina</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 · OBJETIVO -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">Para onde vamos</p>
+          <h2 class="title">Nosso objetivo de treinamento</h2>
+          <div class="rule"></div>
+          <div class="cards c4 accent">
+            <div class="card"><span class="card-n">01</span><h3>Autoconhecimento</h3><p>Desenvolver a consciência sobre si mesmo.</p></div>
+            <div class="card"><span class="card-n">02</span><h3>Autorresponsabilidade</h3><p>Fortalecer a autorresponsabilidade.</p></div>
+            <div class="card"><span class="card-n">03</span><h3>Prática</h3><p>Gerar mudanças práticas na liderança.</p></div>
+            <div class="card"><span class="card-n">04</span><h3>Compromisso</h3><p>Elaborar compromissos individuais.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 · DIVISÓRIA PARTE 01 -->
+      <section class="s-divider">
+        <div class="divider">
+          <p class="divider-kicker">Parte 01</p>
+          <h2 class="divider-title">Lidere a si mesmo<br>antes de liderar pessoas</h2>
+          <div class="divider-rule"></div>
+          <p class="divider-sub">As pessoas não seguem cargos, elas seguem exemplos.</p>
+        </div>
+        <span class="divider-num">01</span>
+      </section>
+
+      <!-- 8 · POR QUE LÍDERES FRACASSAM -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">Um alerta</p>
+          <h2 class="title">Por que líderes fracassam?</h2>
+          <div class="rule"></div>
+          <ul class="list-elegant">
+            <li>Falta de consciência sobre o próprio comportamento.</li>
+            <li>Transferência de culpa.</li>
+            <li>Comunicação ineficaz.</li>
+            <li>Resistência ao feedback.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 9 · AUTOCONHECIMENTO -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">O ponto de partida</p>
+          <h2 class="title">Autoconhecimento</h2>
+          <div class="rule"></div>
+          <p class="lead" style="margin-bottom:30px;">Olhar para dentro antes de conduzir os outros. O que compõe quem você é:</p>
+          <div class="pills">
+            <span class="pill">Valores</span>
+            <span class="pill alt">Crenças</span>
+            <span class="pill">Emoções</span>
+            <span class="pill alt">Pontos fortes</span>
+            <span class="pill">Limitações</span>
+            <span class="pill alt">Gatilhos emocionais</span>
+            <span class="pill solid">Motivações</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 · DINÂMICA: O ESPELHO -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">Dinâmica</p>
+          <h2 class="title">O espelho</h2>
+          <div class="rule"></div>
+          <ul class="questions">
+            <li>Como eu me vejo?</li>
+            <li>Como minha equipe me vê?</li>
+            <li>Como quero ser lembrado?</li>
+          </ul>
+          <p class="lead" style="font-size:20px;margin-bottom:26px;">Envie uma mensagem para 4 contatos perguntando como eles o veem.</p>
+          <p class="kicker" style="margin-bottom:14px;">Os 4 níveis do autoconhecimento</p>
+          <div class="steps">
+            <div class="step"><span class="step-n">01</span><p>Não sei que não sei</p></div>
+            <div class="step"><span class="step-n">02</span><p>Sei que não sei</p></div>
+            <div class="step"><span class="step-n">03</span><p>Sei que sei</p></div>
+            <div class="step"><span class="step-n">04</span><p>Faço naturalmente</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 · INTELIGÊNCIA EMOCIONAL -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">Teoria de Daniel Goleman</p>
+          <h2 class="title">Inteligência emocional</h2>
+          <div class="rule"></div>
+          <div class="pillars">
+            <div class="pl"><span class="pl-n">01</span><h4>Autoconhecimento</h4></div>
+            <div class="pl"><span class="pl-n">02</span><h4>Autocontrole</h4></div>
+            <div class="pl"><span class="pl-n">03</span><h4>Empatia</h4></div>
+            <div class="pl"><span class="pl-n">04</span><h4>Motivação</h4></div>
+            <div class="pl"><span class="pl-n">05</span><h4>Relacionamentos</h4></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 · TÉCNICA ABC -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">Técnica ABC de Aaron Beck</p>
+          <h2 class="title">Meu botão vermelho</h2>
+          <div class="rule"></div>
+          <p class="lead" style="font-size:20px;margin-bottom:28px;">Como normalmente reajo? Como posso responder melhor?</p>
+          <div class="cards c3 abc">
+            <div class="card"><span class="card-n">A</span><h3>Situação</h3><p>O evento ou gatilho que aciona a reação.</p></div>
+            <div class="card"><span class="card-n">B</span><h3>Pensamento automático</h3><p>A interpretação imediata que fazemos.</p></div>
+            <div class="card"><span class="card-n">C</span><h3>Consequências</h3><p>Emocional, comportamental e física.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13 · DIVISÓRIA PARTE 02 -->
+      <section class="s-divider">
+        <div class="divider">
+          <p class="divider-kicker">Parte 02</p>
+          <h2 class="divider-title">Autorresponsabilidade</h2>
+          <div class="divider-rule"></div>
+          <p class="divider-sub">A pergunta-chave: o que depende de mim?</p>
+        </div>
+        <span class="divider-num">02</span>
+      </section>
+
+      <!-- 14 · AS SEIS LEIS -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">As seis leis de Paulo Vieira</p>
+          <h2 class="title">A conquista da autorresponsabilidade</h2>
+          <div class="rule" style="margin-bottom:24px;"></div>
+          <div class="seis">
+            <ol class="list-num leis">
+              <li><span class="n">1</span><span class="t">Se for criticar pessoas... <strong>cale-se.</strong></span></li>
+              <li><span class="n">2</span><span class="t">Se for reclamar das circunstâncias... <strong>dê sugestões.</strong></span></li>
+              <li><span class="n">3</span><span class="t">Se for buscar culpados... <strong>busque soluções.</strong></span></li>
+              <li><span class="n">4</span><span class="t">Se for se fazer de vítima... <strong>faça-se de vencedor.</strong></span></li>
+              <li><span class="n">5</span><span class="t">Se for justificar erros... <strong>aprenda com eles.</strong></span></li>
+              <li><span class="n">6</span><span class="t">Se for julgar alguém... <strong>julgue a atitude dessa pessoa.</strong></span></li>
+            </ol>
+            <aside class="seis-aside">
+              <p>Assumir escolhas.</p>
+              <p>Trocar desculpas por soluções.</p>
+              <div class="key">Pergunta-chave<strong>O que depende de mim?</strong></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15 · REATIVO x AUTORRESPONSÁVEL -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">Duas posturas</p>
+          <h2 class="title">Reativo <span style="color:var(--rust);">×</span> Autorresponsável</h2>
+          <div class="rule" style="margin-bottom:22px;"></div>
+          <div class="transforms">
+            <div class="transform"><span class="from">"A culpa é da equipe."</span><span class="arrow">→</span><span class="to">"Como posso desenvolver a equipe?"</span></div>
+            <div class="transform"><span class="from">"Não dá."</span><span class="arrow">→</span><span class="to">"O que posso fazer diferente?"</span></div>
+          </div>
+          <div class="compare">
+            <div class="col reativo">
+              <h3>Líder reativo</h3>
+              <div class="row"><span class="lbl">Diante de erros e falhas</span><p>Busca culpados.</p></div>
+              <div class="row"><span class="lbl">Diante de obstáculos</span><p>Paralisa pela limitação.</p></div>
+            </div>
+            <div class="col autor">
+              <h3>Líder autorresponsável</h3>
+              <div class="row"><span class="lbl">Diante de erros e falhas</span><p>Assume a responsabilidade do resultado final.</p></div>
+              <div class="row"><span class="lbl">Diante de obstáculos</span><p>É movido pela busca de soluções.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 16 · CÍRCULO DE CONTROLE -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">Onde investir sua energia</p>
+          <h2 class="title">Círculo de controle</h2>
+          <div class="rule"></div>
+          <div class="cards c3" style="margin-bottom:26px;">
+            <div class="card"><h3>Controle</h3><p>O que depende <strong>100% de você</strong>.</p></div>
+            <div class="card"><h3>Influência</h3><p>O que você não controla, mas <strong>pode impactar</strong>.</p></div>
+            <div class="card"><h3>Preocupação</h3><p>O que afeta você, mas está <strong>fora do seu alcance</strong>.</p></div>
+          </div>
+          <p class="kicker" style="margin-bottom:12px;">Frases que sabotam líderes</p>
+          <p class="lead" style="font-size:19px;">“Todo mundo faz isso” · “Não tem jeito” · “Sempre foi assim” · “A culpa é do RH” · “A empresa não ajuda”</p>
+        </div>
+      </section>
+
+      <!-- 17 · REENQUADRANDO -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">Do sabotador ao construtivo</p>
+          <h2 class="title sm">Reenquadrando as frases</h2>
+          <div class="rule" style="margin-bottom:20px;"></div>
+          <div class="reframe">
+            <div class="rf"><span class="rn">1</span><span class="sabota">“Todo mundo faz isso”</span><span class="vira">Qual exemplo eu e minha liderança queremos dar, independentemente do que a maioria faz?</span></div>
+            <div class="rf"><span class="rn">2</span><span class="sabota">“Não tem jeito”</span><span class="vira">Quais alternativas ou novas abordagens ainda não testamos para solucionar isso?</span></div>
+            <div class="rf"><span class="rn">3</span><span class="sabota">“Sempre foi assim”</span><span class="vira">Como posso questionar esse padrão e propor uma melhoria ou inovação para esse processo hoje?</span></div>
+            <div class="rf"><span class="rn">4</span><span class="sabota">“A culpa é do RH”</span><span class="vira">Como posso atuar em parceria com o RH, deixando claros meus desafios e as necessidades da equipe?</span></div>
+            <div class="rf"><span class="rn">5</span><span class="sabota">“A empresa não ajuda”</span><span class="vira">Diante do cenário e dos recursos de hoje, qual é a melhor entrega que posso fazer?</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 18 · AS TRÊS ESFERAS -->
+      <section class="s-esferas">
+        <div class="esferas">
+          <svg class="esferas-svg" viewBox="0 0 520 520" aria-hidden="true">
+            <circle cx="255" cy="300" r="215" fill="#D8A93F"/>
+            <circle cx="240" cy="250" r="158" fill="#5C6B3A"/>
+            <circle cx="228" cy="198" r="98" fill="#EDE3D0"/>
+            <text x="228" y="193" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#2C2A20">Controle</text>
+            <text x="228" y="214" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" fill="#5C5645">ação direta</text>
+            <text x="235" y="352" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#F4EEE1">Influência</text>
+            <text x="235" y="373" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" fill="#E7E0CE">impacto</text>
+            <text x="250" y="475" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#3A2E12">Preocupação</text>
+            <text x="250" y="496" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" fill="#5a4a1e">fora de controle</text>
+          </svg>
+          <div class="esferas-legend">
+            <p class="kicker" style="margin-bottom:4px;">As três esferas de foco</p>
+            <h2 class="title sm" style="margin-bottom:20px;">Autorresponsabilidade na liderança</h2>
+            <div class="leg l-con">
+              <h4>Esfera do controle</h4>
+              <span class="leg-sub">Ação imediata e direta</span>
+              <p>Sua resposta a erros, preparação de reuniões, inteligência emocional.</p>
+            </div>
+            <div class="leg l-inf">
+              <h4>Esfera da influência</h4>
+              <span class="leg-sub">Impacto e desenvolvimento</span>
+              <p>Engajamento da equipe, treinamento, alinhamento entre áreas.</p>
+            </div>
+            <div class="leg l-pre">
+              <h4>Esfera da preocupação</h4>
+              <span class="leg-sub">Totalmente fora de controle</span>
+              <p>Fatores externos, burocracia, crises globais.</p>
+            </div>
+            <div class="esferas-key">
+              <strong>Resposta-chave: o que depende de mim?</strong>
+              <p>Expandir o controle, treinar a influência, reduzir a preocupação.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 19 · PLANO DE AÇÃO -->
+      <section>
+        <div class="wrap">
+          <p class="kicker">Da teoria à prática</p>
+          <h2 class="title">Plano de ação</h2>
+          <div class="rule"></div>
+          <div class="plano">
+            <div class="pcard individual">
+              <span class="ptag">Individual</span>
+              <h3>Comece por você</h3>
+              <ul>
+                <li>1 hábito para abandonar.</li>
+                <li>1 hábito para desenvolver.</li>
+                <li>1 compromisso para 30 dias.</li>
+              </ul>
+            </div>
+            <div class="pcard coletivo">
+              <span class="ptag">Coletivo · líder com a equipe</span>
+              <h3>Construa junto</h3>
+              <p style="font-size:20px;color:var(--ink-soft);line-height:1.5;margin-bottom:14px;">Desenvolver uma dinâmica com o time:</p>
+              <p class="arvore">“Árvore das motivações”</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 20 · ENCERRAMENTO -->
+      <section class="s-fim">
+        <div class="fim">
+          <span class="mark">&ldquo;</span>
+          <p class="fim-quote">O exemplo do líder sempre fala mais alto que suas palavras.</p>
+          <div class="fim-rule"></div>
+          <div class="fim-contatos">
+            <div class="ci"><span class="ci-lbl">Rede social</span><span class="ci-val">@Sinapsyrh</span></div>
+            <div class="ci"><span class="ci-lbl">Telefone</span><span class="ci-val">(92) 98113-7323</span></div>
+          </div>
+          <div class="fim-logos">
+            <img class="selo" src="logos/selo-pdl.png" alt="Programa de Desenvolvimento de Líderes">
+            <img class="sinapsy" src="logos/sinapsy.png" alt="Sinapsy">
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      controls: true,
+      progress: true,
+      center: false,
+      transition: 'fade',
+      width: 1280,
+      height: 720,
+      margin: 0
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+/* =========================================================
+   Programa de Desenvolvimento de Líderes — Sinapsy
+   Design editorial elegante · reveal.js
+   Paleta terrosa (olive / cream / rust / gold) + tipografia
+   Fraunces (display serif) + Poppins (sans)
+   ========================================================= */
+
+:root{
+  --paper:#F4EEE1;        /* fundo creme quente */
+  --paper-card:#FBF7EE;   /* cartões */
+  --paper-deep:#EBE1CC;   /* variações sutis */
+  --ink:#2C2A20;          /* texto principal (marrom-tinta) */
+  --ink-soft:#5C5645;     /* texto secundário */
+  --olive:#5C6B3A;        /* verde-oliva */
+  --olive-deep:#3D4A22;   /* fundo de divisórias */
+  --rust:#C4693A;         /* terracota (destaque) */
+  --rust-deep:#A9532B;
+  --gold:#BD8427;         /* ocre */
+  --line:rgba(44,42,32,.14);
+  --shadow:0 18px 40px -24px rgba(44,42,32,.45);
+}
+
+/* ---------- Base reveal ---------- */
+.reveal{ font-family:'Poppins',system-ui,sans-serif; color:var(--ink); font-weight:400; }
+.reveal .slides{ text-align:left; }
+.reveal .slides section{
+  width:1280px; height:720px; padding:0; margin:0; box-sizing:border-box;
+  display:flex; overflow:hidden;
+}
+.reveal ::selection{ background:var(--rust); color:#fff; }
+.reveal h1,.reveal h2,.reveal h3,.reveal p,.reveal ul,.reveal ol{ margin:0; padding:0; }
+.reveal strong{ font-weight:600; color:inherit; }
+.reveal em{ font-style:italic; }
+
+.reveal .controls{ color:var(--rust); }
+.reveal .progress{ color:var(--rust); height:4px; }
+.reveal .slide-number{ background:transparent; color:var(--ink-soft); font-family:'Poppins'; font-size:14px; right:16px; bottom:12px; }
+
+/* ---------- Blocos utilitários ---------- */
+.wrap{ margin:auto; width:100%; padding:66px 92px; box-sizing:border-box; }
+.wrap.center{ text-align:center; max-width:1000px; }
+.wrap.pad-lg{ padding:72px 100px; }
+
+.kicker{
+  font-family:'Poppins'; font-weight:600; font-size:15px; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--rust); margin-bottom:18px;
+}
+.kicker.on-dark{ color:#E9B98F; }
+
+.title{
+  font-family:'Fraunces','Playfair Display',serif; font-weight:600;
+  font-size:54px; line-height:1.05; letter-spacing:-.4px; color:var(--ink);
+}
+.title.sm{ font-size:46px; }
+.title.lg{ font-size:64px; }
+
+.rule{ width:70px; height:4px; background:var(--rust); border-radius:3px; margin:26px 0 30px; }
+.wrap.center .rule{ margin-left:auto; margin-right:auto; }
+
+.lead{ font-size:23px; line-height:1.62; color:var(--ink-soft); max-width:860px; font-weight:400; }
+.lead strong{ color:var(--ink); }
+
+.tagline-serif{
+  font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:27px;
+  color:var(--olive); margin-top:34px;
+}
+
+/* =========================================================
+   1. CAPA
+   ========================================================= */
+.s-cover{ background:var(--paper); position:relative; }
+.cover-motif{ position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none; }
+.cover-inner{ position:relative; z-index:2; margin:auto 0; padding:0 0 0 100px; max-width:820px; }
+.cover-logos{ display:flex; align-items:center; gap:40px; margin-bottom:52px; }
+.cover-logos .selo{ height:110px; width:auto; }
+.cover-logos .sinapsy{ height:82px; width:auto; }
+.cover-title{
+  font-family:'Fraunces',serif; font-weight:600; font-size:82px; line-height:1.02;
+  letter-spacing:-1px; color:#2A2618;
+}
+.cover-rule{ width:96px; height:5px; background:var(--rust); border-radius:3px; margin:34px 0; }
+.cover-present{ font-size:21px; color:var(--ink-soft); letter-spacing:.01em; }
+.cover-present strong{ color:var(--olive); font-weight:600; }
+
+/* =========================================================
+   Divisórias de seção
+   ========================================================= */
+.s-divider{ background:var(--olive-deep); position:relative; color:#F4EEE1; }
+.s-divider .divider{ position:relative; z-index:2; margin:auto 0; padding-left:100px; max-width:900px; }
+.divider-kicker{ font-weight:600; font-size:15px; letter-spacing:.26em; text-transform:uppercase; color:#E5B48A; margin-bottom:22px; }
+.divider-title{ font-family:'Fraunces',serif; font-weight:600; font-size:66px; line-height:1.04; color:#F6F0E3; letter-spacing:-.5px; }
+.divider-rule{ width:90px; height:4px; background:var(--rust); border-radius:3px; margin:30px 0; }
+.divider-sub{ font-family:'Fraunces',serif; font-style:italic; font-size:27px; color:#DCCFAE; max-width:640px; line-height:1.4; }
+.divider-num{
+  position:absolute; right:70px; bottom:-40px; font-family:'Fraunces',serif; font-weight:600;
+  font-size:340px; line-height:1; color:rgba(196,105,58,.16); z-index:1; user-select:none;
+}
+.s-divider::after{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:14px; background:var(--rust);
+}
+
+/* =========================================================
+   Listas elegantes
+   ========================================================= */
+.list-elegant{ list-style:none; margin-top:8px; max-width:920px; }
+.list-elegant li{
+  position:relative; padding:16px 0 16px 46px; font-size:25px; line-height:1.4;
+  color:var(--ink); border-bottom:1px solid var(--line);
+}
+.list-elegant li:last-child{ border-bottom:none; }
+.list-elegant li::before{
+  content:""; position:absolute; left:6px; top:26px; width:14px; height:14px;
+  background:var(--rust); border-radius:0 50% 50% 50%; transform:rotate(45deg);
+}
+
+/* Lista numerada elegante (acordos, leis) */
+.list-num{ list-style:none; counter-reset:it; display:flex; flex-direction:column; gap:2px; }
+.list-num li{
+  display:flex; align-items:baseline; gap:26px; padding:15px 0; border-bottom:1px solid var(--line);
+}
+.list-num li:last-child{ border-bottom:none; }
+.list-num .n{
+  font-family:'Fraunces',serif; font-weight:600; font-size:34px; color:var(--rust);
+  min-width:58px; font-variant-numeric:tabular-nums;
+}
+.list-num .t{ font-size:24px; color:var(--ink); line-height:1.35; }
+.list-num .t strong{ color:var(--ink); }
+
+/* =========================================================
+   Cartões
+   ========================================================= */
+.cards{ display:grid; gap:26px; margin-top:8px; }
+.cards.c2{ grid-template-columns:repeat(2,1fr); }
+.cards.c3{ grid-template-columns:repeat(3,1fr); }
+.cards.c4{ grid-template-columns:repeat(4,1fr); }
+.card{
+  background:var(--paper-card); border:1px solid var(--line); border-radius:16px;
+  padding:30px 30px 32px; box-shadow:var(--shadow); position:relative; overflow:hidden;
+}
+.card::before{ content:""; position:absolute; left:0; top:0; width:100%; height:5px; background:var(--rust); }
+.card .card-n{ font-family:'Fraunces',serif; font-size:30px; font-weight:600; color:var(--rust); display:block; margin-bottom:10px; }
+.card h3{ font-family:'Fraunces',serif; font-weight:600; font-size:25px; color:var(--ink); margin-bottom:10px; line-height:1.15; }
+.card p{ font-size:19px; line-height:1.5; color:var(--ink-soft); }
+.card .card-tag{ font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); font-weight:600; }
+
+/* Cartões alternando olive/rust nos toppers */
+.cards.accent .card:nth-child(4n+2)::before{ background:var(--olive); }
+.cards.accent .card:nth-child(4n+3)::before{ background:var(--gold); }
+.cards.accent .card:nth-child(4n+4)::before{ background:var(--rust-deep); }
+
+/* Pills / palavras-chave (Autoconhecimento) */
+.pills{ display:flex; flex-wrap:wrap; gap:16px; margin-top:14px; max-width:960px; }
+.pill{
+  font-family:'Fraunces',serif; font-size:26px; color:var(--olive); background:var(--paper-card);
+  border:1.5px solid var(--olive); border-radius:999px; padding:12px 30px; font-weight:500;
+}
+.pill.alt{ color:var(--rust); border-color:var(--rust); }
+.pill.solid{ background:var(--olive); color:#F4EEE1; border-color:var(--olive); }
+
+/* =========================================================
+   Citações
+   ========================================================= */
+.quote-box{
+  position:relative; background:var(--paper-card); border:1px solid var(--line); border-left:6px solid var(--rust);
+  border-radius:14px; padding:40px 46px 44px; box-shadow:var(--shadow); max-width:1000px;
+}
+.quote-box .mark{ font-family:'Fraunces',serif; font-size:90px; line-height:.4; color:var(--rust); opacity:.5; }
+.quote-box p{ font-family:'Fraunces',serif; font-size:30px; line-height:1.4; color:var(--ink); font-style:italic; }
+
+/* =========================================================
+   4-5. BIOS
+   ========================================================= */
+.s-bio{ background:var(--paper); }
+.bio{ display:grid; grid-template-columns:0.86fr 1.14fr; gap:56px; width:100%; padding:60px 84px; box-sizing:border-box; align-items:center; }
+.bio-info .bio-role{ font-family:'Poppins'; font-weight:500; font-size:18px; color:var(--rust); letter-spacing:.02em; margin-top:12px; }
+.bio-info .rule{ margin:22px 0 24px; }
+.bio-text{ font-size:16.5px; line-height:1.6; color:var(--ink-soft); margin-bottom:14px; }
+.bio-facets{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px 20px; }
+.bio-facets.cols3{ grid-template-columns:repeat(3,1fr); }
+.facet{ margin:0; text-align:center; }
+.facet img{
+  width:120px; height:120px; object-fit:cover; border-radius:50%;
+  border:3px solid var(--paper-card); outline:2px solid var(--rust); outline-offset:2px;
+  box-shadow:0 10px 22px -14px rgba(44,42,32,.6);
+}
+.facet.big img{ width:150px; height:150px; }
+.facet figcaption{
+  margin-top:16px; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;
+  font-weight:600; color:var(--ink-soft); line-height:1.25;
+}
+
+/* =========================================================
+   Dinâmica do espelho — 4 níveis (progressão)
+   ========================================================= */
+.steps{ display:flex; align-items:stretch; gap:0; margin-top:6px; }
+.step{ flex:1; position:relative; padding:22px 20px; text-align:center; }
+.step .step-n{ font-family:'Fraunces',serif; font-size:22px; color:var(--rust); font-weight:600; }
+.step p{ font-size:18px; color:var(--ink); line-height:1.3; margin-top:8px; }
+.step:not(:last-child)::after{ content:"→"; position:absolute; right:-10px; top:50%; transform:translateY(-50%); color:var(--rust); font-size:24px; }
+.questions{ list-style:none; margin:6px 0 30px; }
+.questions li{ font-family:'Fraunces',serif; font-style:italic; font-size:27px; color:var(--olive); padding:7px 0; }
+
+/* =========================================================
+   Reativo x Autorresponsável — comparação
+   ========================================================= */
+.compare{ display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:8px; }
+.compare .col{ background:var(--paper-card); border:1px solid var(--line); border-radius:16px; padding:28px 30px 30px; box-shadow:var(--shadow); }
+.compare .col.reativo{ border-top:5px solid var(--ink-soft); }
+.compare .col.autor{ border-top:5px solid var(--olive); }
+.compare .col h3{ font-family:'Poppins'; font-weight:600; font-size:15px; letter-spacing:.14em; text-transform:uppercase; margin-bottom:18px; }
+.compare .col.reativo h3{ color:var(--ink-soft); }
+.compare .col.autor h3{ color:var(--olive); }
+.compare .col .row{ padding:12px 0; border-bottom:1px solid var(--line); }
+.compare .col .row:last-child{ border-bottom:none; }
+.compare .col .row .lbl{ font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--rust); font-weight:600; display:block; margin-bottom:4px; }
+.compare .col .row p{ font-size:19px; line-height:1.4; color:var(--ink); }
+.transforms{ display:flex; flex-direction:column; gap:12px; margin:4px 0 30px; }
+.transform{ display:flex; align-items:center; gap:18px; font-size:20px; }
+.transform .from{ color:var(--ink-soft); font-style:italic; }
+.transform .arrow{ color:var(--rust); font-size:22px; }
+.transform .to{ color:var(--olive); font-weight:500; }
+
+/* =========================================================
+   Reenquadramento — tabela elegante
+   ========================================================= */
+.reframe{ display:flex; flex-direction:column; gap:12px; margin-top:6px; }
+.reframe .rf{ display:grid; grid-template-columns:64px 1fr 1fr; align-items:center; gap:22px; padding:14px 0; border-bottom:1px solid var(--line); }
+.reframe .rf:last-child{ border-bottom:none; }
+.reframe .rf .rn{ font-family:'Fraunces',serif; font-size:30px; color:var(--rust); font-weight:600; }
+.reframe .rf .sabota{ font-size:19px; color:var(--ink-soft); font-style:italic; }
+.reframe .rf .vira{ font-size:19px; color:var(--ink); line-height:1.35; position:relative; padding-left:30px; }
+.reframe .rf .vira::before{ content:"→"; position:absolute; left:0; color:var(--rust); }
+
+/* =========================================================
+   Três esferas de foco (diagrama)
+   ========================================================= */
+.s-esferas{ background:var(--paper); }
+.esferas{ display:grid; grid-template-columns:1fr 1fr; gap:20px; width:100%; padding:56px 88px; box-sizing:border-box; align-items:center; }
+.esferas-svg{ width:100%; height:auto; }
+.esferas-legend{ display:flex; flex-direction:column; gap:22px; }
+.leg{ position:relative; padding-left:28px; }
+.leg::before{ content:""; position:absolute; left:0; top:6px; width:16px; height:16px; border-radius:50%; }
+.leg.l-con::before{ background:#E4D8C6; border:2px solid var(--ink); }
+.leg.l-inf::before{ background:var(--olive); }
+.leg.l-pre::before{ background:var(--gold); }
+.leg h4{ font-family:'Fraunces',serif; font-size:22px; font-weight:600; color:var(--ink); }
+.leg .leg-sub{ font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--rust); font-weight:600; margin:2px 0 6px; }
+.leg p{ font-size:17px; color:var(--ink-soft); line-height:1.45; }
+.esferas-key{ margin-top:10px; padding-top:18px; border-top:1px solid var(--line); }
+.esferas-key strong{ color:var(--rust); font-weight:600; letter-spacing:.04em; }
+.esferas-key p{ font-size:16px; color:var(--ink-soft); line-height:1.5; margin-top:4px; }
+
+/* =========================================================
+   Plano de ação
+   ========================================================= */
+.plano{ display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:8px; }
+.plano .pcard{ background:var(--paper-card); border:1px solid var(--line); border-radius:18px; padding:34px 36px 38px; box-shadow:var(--shadow); position:relative; }
+.plano .pcard .ptag{ font-size:13px; letter-spacing:.18em; text-transform:uppercase; font-weight:600; color:var(--rust); }
+.plano .pcard h3{ font-family:'Fraunces',serif; font-size:28px; font-weight:600; color:var(--ink); margin:8px 0 20px; }
+.plano .pcard ul{ list-style:none; }
+.plano .pcard li{ position:relative; padding:9px 0 9px 30px; font-size:20px; color:var(--ink); border-bottom:1px solid var(--line); }
+.plano .pcard li:last-child{ border-bottom:none; }
+.plano .pcard li::before{ content:""; position:absolute; left:2px; top:18px; width:12px; height:12px; background:var(--olive); border-radius:0 50% 50% 50%; transform:rotate(45deg); }
+.plano .pcard.coletivo li::before{ background:var(--rust); }
+.plano .pcard .arvore{ font-family:'Fraunces',serif; font-style:italic; font-size:26px; color:var(--olive); padding-top:6px; }
+
+/* =========================================================
+   Encerramento
+   ========================================================= */
+.s-fim{ background:var(--olive-deep); color:#F4EEE1; position:relative; }
+.fim{ margin:auto; width:100%; max-width:1040px; padding:60px 90px; box-sizing:border-box; text-align:center; }
+.fim .mark{ font-family:'Fraunces',serif; font-size:120px; line-height:.2; color:var(--rust); display:block; height:70px; }
+.fim-quote{ font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:44px; line-height:1.25; color:#F6F0E3; }
+.fim-rule{ width:90px; height:4px; background:var(--rust); border-radius:3px; margin:38px auto; }
+.fim-contatos{ display:flex; justify-content:center; gap:70px; margin-bottom:8px; }
+.fim-contatos .ci{ text-align:center; }
+.fim-contatos .ci .ci-lbl{ font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:#E5B48A; font-weight:600; display:block; margin-bottom:8px; }
+.fim-contatos .ci .ci-val{ font-family:'Fraunces',serif; font-size:26px; color:#F6F0E3; }
+.fim-logos{ display:flex; justify-content:center; align-items:center; gap:40px; margin-top:44px; }
+.fim-logos .selo{ height:92px; }
+.fim-logos .sinapsy{ height:66px; filter:brightness(0) invert(1); opacity:.9; }
+.s-fim::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:14px;
+  background:linear-gradient(90deg,var(--rust) 0 33%,var(--olive) 33% 66%,var(--gold) 66% 100%); }
+
+/* =========================================================
+   Pilares (Inteligência Emocional / Goleman)
+   ========================================================= */
+.pillars{ display:grid; grid-template-columns:repeat(5,1fr); margin-top:34px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.pl{ text-align:center; padding:34px 14px; position:relative; }
+.pl:not(:last-child)::after{ content:""; position:absolute; right:0; top:18%; height:64%; width:1px; background:var(--line); }
+.pl-n{ font-family:'Fraunces',serif; font-size:36px; font-weight:600; color:var(--rust); display:block; margin-bottom:16px; }
+.pl h4{ font-family:'Fraunces',serif; font-size:23px; font-weight:600; color:var(--ink); line-height:1.2; }
+
+/* ABC — letra grande no lugar do número */
+.cards.abc .card-n{ font-size:54px; line-height:1; margin-bottom:6px; }
+
+/* =========================================================
+   As seis leis — duas colunas
+   ========================================================= */
+.seis{ display:grid; grid-template-columns:1.35fr 1fr; gap:46px; align-items:start; }
+.list-num.leis li{ padding:10px 0; }
+.list-num.leis .n{ font-size:26px; min-width:38px; }
+.list-num.leis .t{ font-size:20px; }
+.seis-aside{ background:var(--paper-card); border:1px solid var(--line); border-left:5px solid var(--olive); border-radius:16px; padding:28px 32px 30px; box-shadow:var(--shadow); }
+.seis-aside p{ font-size:20px; color:var(--ink); padding:9px 0 9px 26px; position:relative; }
+.seis-aside p::before{ content:""; position:absolute; left:0; top:17px; width:11px; height:11px; background:var(--rust); border-radius:0 50% 50% 50%; transform:rotate(45deg); }
+.seis-aside .key{ margin-top:18px; padding-top:20px; border-top:1px solid var(--line); font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--rust); font-weight:600; }
+.seis-aside .key strong{ display:block; font-family:'Fraunces',serif; font-style:italic; font-size:26px; letter-spacing:0; text-transform:none; color:var(--olive); margin-top:10px; font-weight:600; }
