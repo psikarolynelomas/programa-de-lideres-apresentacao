@@ -20,8 +20,9 @@ instalar nada nem rodar servidor — é só HTML e CSS.
 - `midias-leticia/` — fotos da Letícia Gomes
 
 ## Como atualizar
-Qualquer alteração enviada para a branch `main` é publicada automaticamente no
-site pelo GitHub Actions (pasta `.github/workflows`). Para trocar uma foto ou
+Qualquer alteração enviada para a branch `main` é publicada automaticamente pelo
+GitHub Pages (Settings → Pages → "Deploy from a branch: main / root"). Costuma
+levar 1-2 minutos para o site atualizar após o push. Para trocar uma foto ou
 logo, basta substituir o arquivo na pasta correspondente mantendo o mesmo nome.
 
 ---
