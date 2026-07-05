@@ -57,7 +57,7 @@
 .rule{ width:70px; height:4px; background:var(--rust); border-radius:3px; margin:26px 0 30px; }
 .wrap.center .rule{ margin-left:auto; margin-right:auto; }
 
-.lead{ font-size:23px; line-height:1.62; color:var(--ink-soft); max-width:860px; font-weight:400; }
+.lead{ font-size:23px; line-height:1.62; color:var(--ink-soft); max-width:860px; font-weight:400; text-wrap:pretty; }
 .lead strong{ color:var(--ink); }
 
 .tagline-serif{
@@ -71,9 +71,9 @@
 .s-cover{ background:var(--paper); position:relative; }
 .cover-motif{ position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none; }
 .cover-inner{ position:relative; z-index:2; margin:auto 0; padding:0 0 0 100px; max-width:820px; }
-.cover-logos{ display:flex; align-items:center; gap:44px; margin-bottom:54px; }
-.cover-logos .selo{ height:148px; width:auto; }
-.cover-logos .sinapsy{ height:118px; width:auto; }
+.cover-logos{ display:flex; align-items:center; gap:40px; margin-bottom:54px; }
+.cover-logos .selo{ height:150px; width:auto; }
+.cover-logos .sinapsy{ height:auto; width:340px; }
 .cover-title{
   font-family:'Fraunces',serif; font-weight:600; font-size:82px; line-height:1.02;
   letter-spacing:-1px; color:#2A2618;
@@ -148,9 +148,6 @@
 .card p{ font-size:19px; line-height:1.5; color:var(--ink-soft); }
 .card .card-tag{ font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); font-weight:600; }
 
-.cards.c4 .card{ padding:26px 20px 28px; }
-.cards.c4 .card h3{ font-size:18.5px; letter-spacing:-.2px; }
-.cards.c4 .card p{ font-size:16px; }
 
 /* Cartões alternando olive/rust nos toppers */
 .cards.accent .card:nth-child(4n+2)::before{ background:var(--olive); }
@@ -201,11 +198,15 @@
 /* =========================================================
    Dinâmica do espelho — 4 níveis (progressão)
    ========================================================= */
-.steps{ display:flex; align-items:stretch; gap:0; margin-top:6px; }
-.step{ flex:1; position:relative; padding:22px 20px; text-align:center; }
-.step .step-n{ font-family:'Fraunces',serif; font-size:22px; color:var(--rust); font-weight:600; }
-.step p{ font-size:18px; color:var(--ink); line-height:1.3; margin-top:8px; }
-.step:not(:last-child)::after{ content:"→"; position:absolute; right:-10px; top:50%; transform:translateY(-50%); color:var(--rust); font-size:24px; }
+.steps{ display:flex; align-items:stretch; gap:22px; margin-top:6px; }
+.step{
+  flex:1; position:relative; padding:24px 18px; text-align:center;
+  background:var(--paper-card); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow);
+}
+.step::before{ content:""; position:absolute; left:0; top:0; width:100%; height:5px; background:var(--rust); border-radius:14px 14px 0 0; }
+.step .step-n{ font-family:'Fraunces',serif; font-size:26px; color:var(--rust); font-weight:600; }
+.step p{ font-size:17px; color:var(--ink); line-height:1.3; margin-top:8px; }
+.step:not(:last-child)::after{ content:"→"; position:absolute; right:-22px; top:50%; transform:translateY(-50%); color:var(--rust); font-size:20px; z-index:2; }
 .questions{ list-style:none; margin:6px 0 30px; }
 .questions li{ font-family:'Fraunces',serif; font-style:italic; font-size:27px; color:var(--olive); padding:7px 0; }
 
@@ -232,12 +233,20 @@
 /* =========================================================
    Reenquadramento — tabela elegante
    ========================================================= */
-.reframe{ display:flex; flex-direction:column; gap:12px; margin-top:6px; }
-.reframe .rf{ display:grid; grid-template-columns:64px 1fr 1fr; align-items:center; gap:22px; padding:14px 0; border-bottom:1px solid var(--line); }
-.reframe .rf:last-child{ border-bottom:none; }
-.reframe .rf .rn{ font-family:'Fraunces',serif; font-size:30px; color:var(--rust); font-weight:600; }
-.reframe .rf .sabota{ font-size:19px; color:var(--ink-soft); font-style:italic; }
-.reframe .rf .vira{ font-size:19px; color:var(--ink); line-height:1.35; position:relative; padding-left:30px; }
+.reframe{
+  display:grid; grid-template-columns:44px 250px 1fr; align-items:start;
+  column-gap:26px; row-gap:0; margin-top:6px; width:100%;
+}
+.reframe .rf{ display:contents; }
+.reframe .rf .rn,
+.reframe .rf .sabota,
+.reframe .rf .vira{ padding:13px 0; border-bottom:1px solid var(--line); }
+.reframe .rf:last-child .rn,
+.reframe .rf:last-child .sabota,
+.reframe .rf:last-child .vira{ border-bottom:none; }
+.reframe .rf .rn{ font-family:'Fraunces',serif; font-size:26px; color:var(--rust); font-weight:600; }
+.reframe .rf .sabota{ font-size:17px; color:var(--ink-soft); font-style:italic; }
+.reframe .rf .vira{ font-size:17px; color:var(--ink); line-height:1.4; position:relative; padding-left:28px; }
 .reframe .rf .vira::before{ content:"→"; position:absolute; left:0; color:var(--rust); }
 
 /* =========================================================
@@ -277,17 +286,29 @@
    Encerramento
    ========================================================= */
 .s-fim{ background:var(--olive-deep); color:#F4EEE1; position:relative; }
-.fim{ margin:auto; width:100%; max-width:1040px; padding:60px 90px; box-sizing:border-box; text-align:center; }
-.fim .mark{ font-family:'Fraunces',serif; font-size:120px; line-height:.2; color:var(--rust); display:block; height:70px; }
-.fim-quote{ font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:44px; line-height:1.25; color:#F6F0E3; }
-.fim-rule{ width:90px; height:4px; background:var(--rust); border-radius:3px; margin:38px auto; }
-.fim-contatos{ display:flex; justify-content:center; gap:70px; margin-bottom:8px; }
+.fim{ margin:auto; width:100%; max-width:1080px; padding:52px 90px; box-sizing:border-box; text-align:center; }
+.fim .mark{ font-family:'Fraunces',serif; font-size:100px; line-height:.2; color:var(--rust); display:block; height:60px; }
+.fim-quote{ font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:38px; line-height:1.25; color:#F6F0E3; }
+.fim-rule{ width:90px; height:4px; background:var(--rust); border-radius:3px; margin:30px auto; }
+
+.fim-qrs{ display:flex; justify-content:center; gap:36px; margin-bottom:34px; }
+.fim-qrs .qr-card{
+  display:flex; flex-direction:column; align-items:center; gap:10px; text-decoration:none;
+  background:rgba(244,238,225,.08); border:1px solid rgba(244,238,225,.22); border-radius:16px;
+  padding:18px 24px 16px; transition:background .15s ease;
+}
+.fim-qrs .qr-card:hover{ background:rgba(244,238,225,.16); }
+.fim-qrs .qr-label{ font-size:12.5px; letter-spacing:.18em; text-transform:uppercase; color:#E5B48A; font-weight:600; }
+.fim-qrs .qr-card img{ width:112px; height:112px; border-radius:8px; display:block; background:#FBF7EE; }
+.fim-qrs .qr-handle{ font-family:'Fraunces',serif; font-size:16px; color:#F6F0E3; }
+
+.fim-contatos{ display:flex; justify-content:center; gap:70px; margin-bottom:6px; }
 .fim-contatos .ci{ text-align:center; }
 .fim-contatos .ci .ci-lbl{ font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:#E5B48A; font-weight:600; display:block; margin-bottom:8px; }
-.fim-contatos .ci .ci-val{ font-family:'Fraunces',serif; font-size:26px; color:#F6F0E3; }
-.fim-logos{ display:flex; justify-content:center; align-items:center; gap:44px; margin-top:46px; }
-.fim-logos .selo{ height:116px; }
-.fim-logos .sinapsy{ height:92px; filter:brightness(0) invert(1); opacity:.92; }
+.fim-contatos .ci .ci-val{ font-family:'Fraunces',serif; font-size:24px; color:#F6F0E3; }
+.fim-logos{ display:flex; justify-content:center; align-items:center; gap:40px; margin-top:36px; }
+.fim-logos .selo{ height:118px; }
+.fim-logos .sinapsy{ width:270px; height:auto; filter:brightness(0) invert(1); opacity:.92; }
 .s-fim::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:14px;
   background:linear-gradient(90deg,var(--rust) 0 33%,var(--olive) 33% 66%,var(--gold) 66% 100%); }
 
