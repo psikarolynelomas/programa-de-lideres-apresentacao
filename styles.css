@@ -307,7 +307,7 @@
 .fim-contatos .ci .ci-lbl{ font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:#E5B48A; font-weight:600; display:block; margin-bottom:8px; }
 .fim-contatos .ci .ci-val{ font-family:'Fraunces',serif; font-size:24px; color:#F6F0E3; }
 .fim-logos{ display:flex; justify-content:center; align-items:center; gap:40px; margin-top:36px; }
-.fim-logos .selo{ height:118px; }
+.fim-logos .selo{ height:118px; filter:brightness(0) invert(1); opacity:.92; }
 .fim-logos .sinapsy{ width:270px; height:auto; filter:brightness(0) invert(1); opacity:.92; }
 .s-fim::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:14px;
   background:linear-gradient(90deg,var(--rust) 0 33%,var(--olive) 33% 66%,var(--gold) 66% 100%); }
