@@ -259,7 +259,15 @@ html, body{ background:var(--paper); }
    ========================================================= */
 .s-esferas{ background:var(--paper); }
 .esferas{ display:grid; grid-template-columns:1fr 1fr; gap:20px; width:100%; padding:56px 88px; box-sizing:border-box; align-items:center; }
-.esferas-svg{ width:100%; height:auto; }
+/* Caixa com proporção travada (técnica do padding-bottom, funciona em
+   qualquer navegador): o SVG fica preso dentro dela e nunca pode "vazar"
+   pra cima do texto abaixo, seja qual for o motor de renderização.
+   Dois níveis porque a porcentagem do padding-bottom é calculada em
+   cima da largura do elemento PAI — precisa de um wrapper externo já
+   com a largura final definida (max-width) pro cálculo dar certo. */
+.esferas-graphic{ width:100%; }
+.esferas-graphic-inner{ position:relative; width:100%; padding-bottom:100%; }
+.esferas-svg{ position:absolute; inset:0; width:100%; height:100%; display:block; }
 .esferas-legend{ display:flex; flex-direction:column; gap:22px; }
 .leg{ position:relative; padding-left:28px; }
 .leg::before{ content:""; position:absolute; left:0; top:6px; width:16px; height:16px; border-radius:50%; }
@@ -448,8 +456,8 @@ html, body{ background:var(--paper); }
   .reframe .rf .vira{ font-size:14px; grid-column:1/-1; padding-left:26px; margin-top:-6px; }
 
   /* ---------- Três esferas ---------- */
-  .esferas{ grid-template-columns:1fr; gap:24px; padding:44px 24px 30px; }
-  .esferas-svg{ max-width:260px; margin:0 auto; }
+  .esferas{ display:flex; flex-direction:column; gap:24px; padding:44px 24px 30px; }
+  .esferas-graphic{ max-width:260px; width:100%; margin:0 auto; }
   .esferas-legend{ gap:16px; }
   .leg h4{ font-size:17px; }
   .leg .leg-sub{ font-size:11px; }
