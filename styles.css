@@ -358,14 +358,13 @@ html, body{ background:var(--paper); }
    ========================================================= */
 @media (max-width: 700px){
 
-  /* overflow:hidden por padrão preserva o swipe entre slides; só a bio
-     mais densa (Letícia, 11 fotos) realmente precisa de rolagem interna. */
   .reveal .controls{ display:none; }
   .reveal .progress{ display:none !important; }
-  /* touch-action:pan-y deixa o gesto vertical rolar a lista de fotos
-     nativamente, sem "sequestrar" o arrasto horizontal — que continua
+  /* Rolagem interna em QUALQUER slide (a altura real varia por aparelho e
+     alguns conteúdos podem passar da tela) + touch-action:pan-y garante
+     que só o gesto vertical vira rolagem — o arrasto horizontal continua
      livre para o reveal.js interpretar como troca de slide. */
-  .s-bio{ overflow-y:auto !important; -webkit-overflow-scrolling:touch; touch-action:pan-y; }
+  .reveal .slides section{ overflow-y:auto !important; -webkit-overflow-scrolling:touch; touch-action:pan-y; }
 
   /* ---------- Utilitários ---------- */
   .wrap{ padding:54px 24px 30px; }
