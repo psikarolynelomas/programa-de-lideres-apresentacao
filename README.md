@@ -29,3 +29,4 @@ logo, basta substituir o arquivo na pasta correspondente mantendo o mesmo nome.
 Design e desenvolvimento com apoio de Claude Code.
 
 
+
