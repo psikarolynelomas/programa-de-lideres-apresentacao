@@ -34,11 +34,23 @@ html, body{ background:var(--paper); }
 .reveal strong{ font-weight:600; color:inherit; }
 .reveal em{ font-style:italic; }
 
-.reveal .controls{ color:var(--rust); }
+/* Setas de navegação: reveal.js desenha os "chevrons" via pseudo-elemento
+   dentro de .controls-arrow, cujo tamanho é 3.6em (relativo ao font-size
+   do próprio .controls) — reduzir o font-size encolhe tudo proporcionalmente.
+   Aqui também ganham um chip circular sutil, mais discreto que o padrão. */
+/* reveal.js troca a cor dos controles pra branco/preto conforme detecta se
+   o fundo do slide é escuro ou claro (.has-dark/light-background), com
+   especificidade maior que um simples ".reveal .controls" — por isso o
+   !important direto no .controls-arrow, garantindo a cor em qualquer slide. */
+.reveal .controls{ font-size:9px; bottom:18px; right:18px; }
+.reveal .controls .controls-arrow{
+  color:var(--rust) !important; background:var(--paper-card); border-radius:50%;
+  box-shadow:0 3px 10px rgba(44,42,32,.16); border:1px solid var(--line);
+}
 .reveal .progress{ color:var(--rust); height:4px; }
 .reveal .slide-number{
-  background:rgba(44,42,32,.55); color:#F4EEE1; font-family:'Poppins'; font-size:13px;
-  right:14px; bottom:10px; padding:3px 9px; border-radius:6px;
+  background:rgba(44,42,32,.55); color:#F4EEE1; font-family:'Poppins'; font-size:12px;
+  left:16px; right:auto; bottom:16px; padding:3px 9px; border-radius:6px;
 }
 
 /* ---------- Blocos utilitários ---------- */
@@ -358,7 +370,8 @@ html, body{ background:var(--paper); }
    ========================================================= */
 @media (max-width: 700px){
 
-  .reveal .controls{ display:none; }
+  .reveal .controls{ font-size:7px; bottom:14px; right:14px; }
+  .reveal .slide-number{ font-size:11px; left:12px; bottom:12px; }
   .reveal .progress{ display:none !important; }
   /* Rolagem interna em QUALQUER slide (a altura real varia por aparelho e
      alguns conteúdos podem passar da tela) + touch-action:pan-y garante
