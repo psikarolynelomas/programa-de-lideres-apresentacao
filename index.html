@@ -419,6 +419,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
   <script>
+    var MOBILE_QUERY = '(max-width: 700px)';
+    function isMobile(){ return window.matchMedia(MOBILE_QUERY).matches; }
+
     Reveal.initialize({
       hash: true,
       slideNumber: 'c/t',
@@ -426,9 +429,24 @@
       progress: true,
       center: false,
       transition: 'fade',
-      width: 1280,
-      height: 720,
-      margin: 0
+      width: isMobile() ? 420 : 1280,
+      height: isMobile() ? 760 : 720,
+      margin: isMobile() ? 0.02 : 0
+    });
+
+    // Se a janela cruzar o limite desktop/mobile (ex.: rotação, redimensionar),
+    // reconfigura a tela lógica do reveal.js para a nova faixa.
+    var wasMobile = isMobile();
+    window.addEventListener('resize', function(){
+      var nowMobile = isMobile();
+      if (nowMobile !== wasMobile) {
+        wasMobile = nowMobile;
+        Reveal.configure({
+          width: nowMobile ? 420 : 1280,
+          height: nowMobile ? 760 : 720,
+          margin: nowMobile ? 0.02 : 0
+        });
+      }
     });
   </script>
 </body>

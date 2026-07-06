@@ -24,7 +24,7 @@
 .reveal{ font-family:'Poppins',system-ui,sans-serif; color:var(--ink); font-weight:400; }
 .reveal .slides{ text-align:left; }
 .reveal .slides section{
-  width:1280px; height:720px; padding:0; margin:0; box-sizing:border-box;
+  width:100%; height:100%; padding:0; margin:0; box-sizing:border-box;
   display:flex !important; overflow:hidden;
 }
 .reveal ::selection{ background:var(--rust); color:#fff; }
@@ -336,3 +336,146 @@
 .seis-aside p::before{ content:""; position:absolute; left:0; top:17px; width:11px; height:11px; background:var(--rust); border-radius:0 50% 50% 50%; transform:rotate(45deg); }
 .seis-aside .key{ margin-top:18px; padding-top:20px; border-top:1px solid var(--line); font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--rust); font-weight:600; }
 .seis-aside .key strong{ display:block; font-family:'Fraunces',serif; font-style:italic; font-size:26px; letter-spacing:0; text-transform:none; color:var(--olive); margin-top:10px; font-weight:600; }
+
+/* =========================================================
+   LAYOUT MOBILE
+   O reveal.js usa uma tela lógica própria e mais estreita no
+   celular (ver index.html), então estes valores em px já são
+   pensados para esse formato — não são o desktop encolhido.
+   ========================================================= */
+@media (max-width: 700px){
+
+  .reveal .slides section{ overflow-y:auto !important; -webkit-overflow-scrolling:touch; }
+  .reveal .controls{ display:none; }
+
+  /* ---------- Utilitários ---------- */
+  .wrap{ padding:54px 24px 30px; }
+  .wrap.center{ padding:54px 26px 30px; }
+  .kicker{ font-size:10.5px; letter-spacing:.16em; margin-bottom:10px; }
+  .title{ font-size:25px; letter-spacing:-.2px; }
+  .title.sm{ font-size:21px; }
+  .title.lg{ font-size:28px; }
+  .rule{ width:36px; height:3px; margin:14px 0 16px; }
+  .lead{ font-size:15px !important; line-height:1.5 !important; max-width:none; }
+  .tagline-serif{ font-size:16px; margin-top:20px; }
+
+  /* ---------- Capa ---------- */
+  .cover-motif{ display:none; }
+  .cover-inner{ padding:0 26px; max-width:none; text-align:center; margin:auto; }
+  .cover-logos{ justify-content:center; gap:18px; margin-bottom:22px; }
+  .cover-logos .selo{ height:66px; }
+  .cover-logos .sinapsy{ width:160px; }
+  .cover-title{ font-size:32px; }
+  .cover-rule{ margin:18px auto; width:60px; }
+  .cover-present{ font-size:14px; }
+
+  /* ---------- Divisórias ---------- */
+  .s-divider{ flex-direction:column; justify-content:center; padding:40px 26px; }
+  .s-divider .divider{ position:static; margin:0; padding:0; max-width:none; }
+  .divider-kicker{ font-size:10.5px; margin-bottom:12px; }
+  .divider-title{ font-size:30px; line-height:1.14; }
+  .divider-rule{ width:36px; margin:18px 0 16px; }
+  .divider-sub{ font-size:16px; }
+  .divider-num{ display:none; }
+  .divider-foot{ position:static; margin-top:26px; padding-top:16px; }
+  .divider-foot span{ font-size:9.5px; }
+
+  /* ---------- Listas ---------- */
+  .list-elegant li{ font-size:15px; padding:12px 0 12px 28px; }
+  .list-elegant li::before{ width:11px; height:11px; top:20px; }
+  .list-num{ gap:0; }
+  .list-num li{ gap:14px; padding:12px 0; }
+  .list-num .n{ font-size:22px; min-width:32px; }
+  .list-num .t{ font-size:15px; }
+
+  /* ---------- Cartões ---------- */
+  .cards, .cards.c2, .cards.c3, .cards.c4{ grid-template-columns:1fr; gap:14px; }
+  .card{ padding:18px 18px 20px; }
+  .card .card-n{ font-size:22px; }
+  .card h3{ font-size:18px; }
+  .card p{ font-size:14px; }
+  .cards.abc .card-n{ font-size:34px; }
+
+  /* ---------- Pills ---------- */
+  .pills{ gap:10px; }
+  .pill{ font-size:15px; padding:8px 18px; }
+
+  /* ---------- Bios ---------- */
+  .bio{ grid-template-columns:1fr; gap:22px; padding:46px 24px 30px; align-items:start; }
+  .bio-info .bio-role{ font-size:13px; margin-top:8px; }
+  .bio-info .rule{ margin:16px 0 18px; }
+  .bio-text{ font-size:13.5px; line-height:1.55; }
+  .bio-facets, .bio-facets.cols3{ grid-template-columns:repeat(3,1fr); gap:16px 12px; }
+  .facet img, .facet.big img{ width:74px; height:74px; }
+  .facet figcaption{ font-size:9.5px; margin-top:10px; }
+
+  /* ---------- Dinâmica do espelho ---------- */
+  .steps{ flex-direction:column; gap:20px; }
+  .step{ padding:16px 18px; }
+  .step .step-n{ font-size:20px; }
+  .step p{ font-size:14px; }
+  .step:not(:last-child)::after{
+    content:"↓"; right:auto; left:50%; top:auto; bottom:-17px; transform:translateX(-50%);
+  }
+  .questions{ margin:6px 0 22px; }
+  .questions li{ font-size:18px; padding:5px 0; }
+
+  /* ---------- Comparações ---------- */
+  .compare{ grid-template-columns:1fr; gap:16px; }
+  .compare .col{ padding:18px 20px 20px; }
+  .compare .col h3{ font-size:12px; margin-bottom:14px; }
+  .compare .col .row p{ font-size:14px; }
+  .transforms{ gap:14px; margin:4px 0 22px; }
+  .transform{ flex-direction:column; align-items:flex-start; gap:4px; font-size:14px; }
+
+  /* ---------- Reenquadramento ---------- */
+  .reframe{ grid-template-columns:26px 1fr; column-gap:14px; }
+  .reframe .rf .rn{ font-size:20px; }
+  .reframe .rf .sabota{ font-size:14px; }
+  .reframe .rf .vira{ font-size:14px; grid-column:1/-1; padding-left:26px; margin-top:-6px; }
+
+  /* ---------- Três esferas ---------- */
+  .esferas{ grid-template-columns:1fr; gap:24px; padding:44px 24px 30px; }
+  .esferas-svg{ max-width:260px; margin:0 auto; }
+  .esferas-legend{ gap:16px; }
+  .leg h4{ font-size:17px; }
+  .leg .leg-sub{ font-size:11px; }
+  .leg p{ font-size:13.5px; }
+  .esferas-key p{ font-size:13.5px; }
+
+  /* ---------- Plano de ação ---------- */
+  .plano{ grid-template-columns:1fr; gap:16px; }
+  .plano .pcard{ padding:20px 22px 22px; }
+  .plano .pcard h3{ font-size:20px; margin:6px 0 14px; }
+  .plano .pcard li{ font-size:14.5px; }
+  .plano .pcard .arvore{ font-size:19px; }
+
+  /* ---------- Pilares (Inteligência Emocional) ---------- */
+  .pillars{ grid-template-columns:repeat(2,1fr); gap:12px; border:none; margin-top:22px; }
+  .pl{ background:var(--paper-card); border:1px solid var(--line); border-radius:12px; padding:18px 12px; }
+  .pl::after{ display:none; }
+  .pl-n{ font-size:24px; margin-bottom:8px; }
+  .pl h4{ font-size:15px; }
+
+  /* ---------- As seis leis ---------- */
+  .seis{ grid-template-columns:1fr; gap:20px; }
+  .list-num.leis .n{ font-size:20px; }
+  .list-num.leis .t{ font-size:14px; }
+  .seis-aside{ padding:20px 22px; }
+  .seis-aside p{ font-size:14.5px; }
+  .seis-aside .key strong{ font-size:20px; }
+
+  /* ---------- Encerramento ---------- */
+  .fim{ padding:40px 24px; }
+  .fim .mark{ font-size:60px; height:40px; }
+  .fim-quote{ font-size:22px; }
+  .fim-rule{ margin:20px auto; }
+  .fim-qrs{ gap:14px; margin-bottom:24px; }
+  .fim-qrs .qr-card{ padding:12px 14px 12px; gap:8px; }
+  .fim-qrs .qr-card img{ width:84px; height:84px; }
+  .fim-qrs .qr-label{ font-size:10px; }
+  .fim-qrs .qr-handle{ font-size:12px; }
+  .fim-logos{ gap:22px; margin-top:26px; }
+  .fim-logos .selo{ height:64px; }
+  .fim-logos .sinapsy{ width:150px; }
+}
