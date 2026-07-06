@@ -420,16 +420,18 @@
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
   <script>
     var MOBILE_QUERY = '(max-width: 700px)';
+    var MOBILE_W = 390; // largura lógica fixa (é o que a folha de estilo mobile assume)
     function isMobile(){ return window.matchMedia(MOBILE_QUERY).matches; }
-    // Tela lógica mobile próxima da proporção de um celular real (~19.5:9),
-    // pra sobrar o mínimo possível de "gutter" quando o reveal.js encaixa
-    // o slide no viewport verdadeiro do aparelho.
-    var MOBILE_W = 390, MOBILE_H = 844;
+    // Calcula a altura lógica para bater EXATAMENTE com a proporção da tela
+    // real do aparelho — assim o reveal.js nunca precisa "sobrar" (letterbox)
+    // pra encaixar o slide, e a apresentação preenche a tela de ponta a ponta.
+    function mobileHeight(){
+      return Math.round(MOBILE_W * (window.innerHeight / window.innerWidth));
+    }
 
-    // Mantém o fundo por trás do slide (gutter/letterbox) sempre na mesma
-    // cor do slide atual, evitando qualquer tira branca aparecendo quando
-    // a altura visível do navegador muda (ex.: a barra de endereço do
-    // celular recolhendo/aparecendo).
+    // Mantém o fundo por trás do slide sempre na mesma cor do slide atual,
+    // reforço para o instante entre trocar de slide e o reveal.js atualizar
+    // seu próprio sistema de background.
     function syncViewportBackground(){
       var current = Reveal.getCurrentSlide();
       var color = current && current.getAttribute('data-background-color');
@@ -445,29 +447,28 @@
       center: false,
       transition: 'fade',
       width: isMobile() ? MOBILE_W : 1280,
-      height: isMobile() ? MOBILE_H : 720,
-      margin: isMobile() ? 0.02 : 0
+      height: isMobile() ? mobileHeight() : 720,
+      margin: 0
     }).then(syncViewportBackground);
 
     Reveal.on('slidechanged', syncViewportBackground);
 
-    // Se a janela cruzar o limite desktop/mobile (ex.: rotação, redimensionar),
-    // reconfigura a tela lógica do reveal.js para a nova faixa.
-    var wasMobile = isMobile();
+    // Reajusta a tela lógica sempre que a janela mudar (rotação, redimensionar,
+    // barra de endereço do celular recolhendo/aparecendo), pra continuar
+    // batendo com a proporção real do viewport e não sobrar nenhuma margem.
+    var resizeTimer;
     window.addEventListener('resize', function(){
-      var nowMobile = isMobile();
-      if (nowMobile !== wasMobile) {
-        wasMobile = nowMobile;
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function(){
+        var nowMobile = isMobile();
         Reveal.configure({
           width: nowMobile ? MOBILE_W : 1280,
-          height: nowMobile ? MOBILE_H : 720,
-          margin: nowMobile ? 0.02 : 0
+          height: nowMobile ? mobileHeight() : 720,
+          margin: 0
         });
-      }
-      // Reajusta o encaixe do slide sempre que a altura visível mudar
-      // (ex.: barra de endereço do navegador recolhendo no celular).
-      Reveal.layout();
-      syncViewportBackground();
+        Reveal.layout();
+        syncViewportBackground();
+      }, 120);
     });
   </script>
 </body>
