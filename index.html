@@ -330,12 +330,12 @@
             <circle cx="255" cy="300" r="215" fill="#D8A93F"/>
             <circle cx="240" cy="250" r="158" fill="#5C6B3A"/>
             <circle cx="228" cy="198" r="98" fill="#EDE3D0"/>
-            <text x="228" y="193" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#2C2A20">Controle</text>
-            <text x="228" y="214" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" fill="#5C5645">ação direta</text>
-            <text x="235" y="352" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#F4EEE1">Influência</text>
-            <text x="235" y="373" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" fill="#E7E0CE">impacto</text>
-            <text x="250" y="475" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#3A2E12">Preocupação</text>
-            <text x="250" y="496" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" fill="#5a4a1e">fora de controle</text>
+            <text x="228" y="189" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#2C2A20">Controle</text>
+            <text x="228" y="218" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" fill="#5C5645">ação direta</text>
+            <text x="235" y="348" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#F4EEE1">Influência</text>
+            <text x="235" y="377" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" fill="#E7E0CE">impacto</text>
+            <text x="250" y="471" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#3A2E12">Preocupação</text>
+            <text x="250" y="500" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" fill="#5a4a1e">fora de controle</text>
           </svg>
           <div class="esferas-legend">
             <p class="kicker" style="margin-bottom:4px;">As três esferas de foco</p>
@@ -429,14 +429,28 @@
       return Math.round(MOBILE_W * (window.innerHeight / window.innerWidth));
     }
 
-    // Mantém o fundo por trás do slide sempre na mesma cor do slide atual,
-    // reforço para o instante entre trocar de slide e o reveal.js atualizar
-    // seu próprio sistema de background.
+    // Mantém o fundo por trás do slide (html, body e o viewport do reveal.js,
+    // todas as camadas possíveis) sempre na mesma cor do slide atual — assim
+    // nenhuma "sobra" de layout consegue aparecer com uma cor diferente.
     function syncViewportBackground(){
       var current = Reveal.getCurrentSlide();
       var color = current && current.getAttribute('data-background-color');
+      if (!color) return;
       var viewport = document.querySelector('.reveal-viewport');
-      if (color && viewport) viewport.style.background = color;
+      if (viewport) viewport.style.background = color;
+      document.documentElement.style.background = color;
+      document.body.style.background = color;
+    }
+
+    function relayout(){
+      var nowMobile = isMobile();
+      Reveal.configure({
+        width: nowMobile ? MOBILE_W : 1280,
+        height: nowMobile ? mobileHeight() : 720,
+        margin: 0
+      });
+      Reveal.layout();
+      syncViewportBackground();
     }
 
     Reveal.initialize({
@@ -449,27 +463,28 @@
       width: isMobile() ? MOBILE_W : 1280,
       height: isMobile() ? mobileHeight() : 720,
       margin: 0
-    }).then(syncViewportBackground);
+    }).then(function(){
+      syncViewportBackground();
+      // A barra de endereço do celular costuma recolher/aparecer alguns
+      // instantes depois do carregamento, mudando a altura real da tela;
+      // reajusta de novo assim que ela se acomodar.
+      setTimeout(relayout, 400);
+    });
 
     Reveal.on('slidechanged', syncViewportBackground);
 
-    // Reajusta a tela lógica sempre que a janela mudar (rotação, redimensionar,
-    // barra de endereço do celular recolhendo/aparecendo), pra continuar
-    // batendo com a proporção real do viewport e não sobrar nenhuma margem.
+    // "visualViewport" é a API feita pra detectar exatamente essa mudança de
+    // altura no celular (barra de endereço, teclado etc.) — mais confiável
+    // que o resize comum da janela pra esse caso específico.
     var resizeTimer;
-    window.addEventListener('resize', function(){
+    function scheduleRelayout(){
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function(){
-        var nowMobile = isMobile();
-        Reveal.configure({
-          width: nowMobile ? MOBILE_W : 1280,
-          height: nowMobile ? mobileHeight() : 720,
-          margin: 0
-        });
-        Reveal.layout();
-        syncViewportBackground();
-      }, 120);
-    });
+      resizeTimer = setTimeout(relayout, 120);
+    }
+    window.addEventListener('resize', scheduleRelayout);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', scheduleRelayout);
+    }
   </script>
 </body>
 </html>
