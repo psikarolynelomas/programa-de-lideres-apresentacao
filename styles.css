@@ -21,6 +21,8 @@
 }
 
 /* ---------- Base reveal ---------- */
+html, body{ background:var(--paper); }
+.reveal-viewport{ background:var(--paper); }
 .reveal{ font-family:'Poppins',system-ui,sans-serif; color:var(--ink); font-weight:400; }
 .reveal .slides{ text-align:left; }
 .reveal .slides section{
@@ -34,7 +36,10 @@
 
 .reveal .controls{ color:var(--rust); }
 .reveal .progress{ color:var(--rust); height:4px; }
-.reveal .slide-number{ background:transparent; color:var(--ink-soft); font-family:'Poppins'; font-size:14px; right:16px; bottom:12px; }
+.reveal .slide-number{
+  background:rgba(44,42,32,.55); color:#F4EEE1; font-family:'Poppins'; font-size:13px;
+  right:14px; bottom:10px; padding:3px 9px; border-radius:6px;
+}
 
 /* ---------- Blocos utilitários ---------- */
 .wrap{ margin:0; width:100%; padding:104px 100px 100px; box-sizing:border-box; align-self:flex-start; }
@@ -345,8 +350,11 @@
    ========================================================= */
 @media (max-width: 700px){
 
-  .reveal .slides section{ overflow-y:auto !important; -webkit-overflow-scrolling:touch; }
+  /* overflow:hidden por padrão preserva o swipe entre slides; só a bio
+     mais densa (Letícia, 11 fotos) realmente precisa de rolagem interna. */
   .reveal .controls{ display:none; }
+  .reveal .progress{ display:none !important; }
+  .s-bio{ overflow-y:auto !important; -webkit-overflow-scrolling:touch; }
 
   /* ---------- Utilitários ---------- */
   .wrap{ padding:54px 24px 30px; }
@@ -370,14 +378,16 @@
   .cover-present{ font-size:14px; }
 
   /* ---------- Divisórias ---------- */
-  .s-divider{ flex-direction:column; justify-content:center; padding:40px 26px; }
-  .s-divider .divider{ position:static; margin:0; padding:0; max-width:none; }
+  /* padding vai na div filha (.divider), não na própria section: uma
+     regra genérica de maior especificidade zera o padding da section. */
+  .s-divider{ flex-direction:column; justify-content:center; padding:0; }
+  .s-divider .divider{ position:static; margin:0; padding:40px 30px 0; max-width:none; }
   .divider-kicker{ font-size:10.5px; margin-bottom:12px; }
   .divider-title{ font-size:30px; line-height:1.14; }
   .divider-rule{ width:36px; margin:18px 0 16px; }
   .divider-sub{ font-size:16px; }
   .divider-num{ display:none; }
-  .divider-foot{ position:static; margin-top:26px; padding-top:16px; }
+  .divider-foot{ position:static; margin:26px 0 0; padding:16px 30px 30px; }
   .divider-foot span{ font-size:9.5px; }
 
   /* ---------- Listas ---------- */
@@ -451,11 +461,11 @@
   .plano .pcard .arvore{ font-size:19px; }
 
   /* ---------- Pilares (Inteligência Emocional) ---------- */
-  .pillars{ grid-template-columns:repeat(2,1fr); gap:12px; border:none; margin-top:22px; }
-  .pl{ background:var(--paper-card); border:1px solid var(--line); border-radius:12px; padding:18px 12px; }
+  .pillars{ grid-template-columns:1fr; gap:12px; border:none; margin-top:22px; }
+  .pl{ background:var(--paper-card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; text-align:left; display:flex; align-items:center; gap:16px; }
   .pl::after{ display:none; }
-  .pl-n{ font-size:24px; margin-bottom:8px; }
-  .pl h4{ font-size:15px; }
+  .pl-n{ font-size:22px; margin-bottom:0; min-width:34px; }
+  .pl h4{ font-size:16px; }
 
   /* ---------- As seis leis ---------- */
   .seis{ grid-template-columns:1fr; gap:20px; }
